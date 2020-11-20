@@ -1,0 +1,150 @@
+{
+  "kind": "collectionType",
+  "collectionName": "products",
+  "info": {
+    "name": "Product",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "label": {
+      "type": "string"
+    },
+    "reference": {
+      "type": "string",
+      "private": false,
+      "required": true,
+      "unique": true
+    },
+    "photo": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "OtherSizes": {
+      "type": "enumeration",
+      "enum": [
+        "FrenchPattern",
+        "VersaillesPattern",
+        "FreeLength",
+        "Slab"
+      ]
+    },
+    "product": {
+      "type": "enumeration",
+      "enum": [
+        "block",
+        "slab",
+        "dimensional"
+      ]
+    },
+    "quary": {
+      "type": "enumeration",
+      "enum": [
+        "ozcanlar",
+        "kaynak"
+      ]
+    },
+    "material": {
+      "type": "enumeration",
+      "enum": [
+        "basalt",
+        "granite",
+        "limestone",
+        "marble",
+        "onyx",
+        "travertine"
+      ]
+    },
+    "name": {
+      "type": "enumeration",
+      "enum": [
+        "CountryClassic",
+        "IvoryLight",
+        "LightWalnut",
+        "Silver"
+      ]
+    },
+    "Type": {
+      "type": "enumeration",
+      "enum": [
+        "Paver",
+        "PoolCoping",
+        "Tile"
+      ]
+    },
+    "EdgeFinish": {
+      "type": "enumeration",
+      "enum": [
+        "Beveled",
+        "Chiseled",
+        "Hammered"
+      ]
+    },
+    "SurfaceFinishes": {
+      "type": "enumeration",
+      "enum": [
+        "FilledAndBrushed",
+        "FilledAndHoned",
+        "FilledAndPolished",
+        "SandBlasting",
+        "SandBlastingAndBrushed",
+        "Tumbled",
+        "UnfilledAndBrushed",
+        "UnfilledAndHoned"
+      ]
+    },
+    "Grade": {
+      "type": "enumeration",
+      "enum": [
+        "Commercial",
+        "Premium",
+        "Standard"
+      ]
+    },
+    "PublicURL": {
+      "type": "string"
+    },
+    "CustomsCommodityHSCode": {
+      "type": "string"
+    },
+    "OriginCountry": {
+      "type": "enumeration",
+      "enum": [
+        "USA",
+        "Turkey",
+        "Italy"
+      ]
+    },
+    "ProductPhoto": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "Note": {
+      "type": "richtext"
+    },
+    "price": {
+      "type": "decimal"
+    },
+    "qty": {
+      "type": "integer"
+    },
+    "categories": {
+      "via": "products",
+      "collection": "category"
+    }
+  }
+}

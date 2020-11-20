@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "employees",
+  "info": {
+    "name": "Employee",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "employeestartdate": {
+      "type": "date"
+    },
+    "email": {
+      "type": "email",
+      "required": true
+    }
+  }
+}
